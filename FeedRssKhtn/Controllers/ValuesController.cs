@@ -10,8 +10,6 @@ namespace FeedRssKhtn.Controllers
 {
     public class ValuesController : ApiController
     {
-        [HttpGet]
-        [Route("api/get")]
         public IEnumerable<Url> Get()
         {
             FeedFunction func = new FeedFunction();

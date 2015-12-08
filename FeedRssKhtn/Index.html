@@ -4,16 +4,17 @@
     <title></title>
 	<meta charset="utf-8" />
     <script src="Scripts/jquery-2.1.4.js"></script>
-    
+    <script>
+    $.ajax({
+        beforeSend: function (request) {
+            request.setRequestHeader("Accept", "application/rss+xml");
+        },
+        url: "http://localhost:49438/api/values"
+    });
+    </script>
+
 </head>
 <body>
-    <script>
-        $.ajax({
-            beforeSend: function (request) {
-                request.setRequestHeader("Accept", "application/rss+xml");
-            },
-            url: "http://feedrsskhtn.apphb.com/api/get"
-        });
-    </script>
+    
 </body>
 </html>
