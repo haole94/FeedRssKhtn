@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    
+</head>
+<body>
+    <script>
+        $.ajax({
+            beforeSend: function (request) {
+                request.setRequestHeader("Accept", "application/rss+xml");
+            },
+            url: "http://localhost:49438/api/get"
+        });
+    </script>
+</body>
+</html>
