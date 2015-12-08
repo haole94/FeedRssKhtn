@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 
 namespace FeedRssKhtn
@@ -31,7 +32,8 @@ namespace FeedRssKhtn
                 HtmlNodeCollection col = n.SelectNodes(".//td");
                 string day = col.ElementAt(0).InnerText;
                 string year = col.ElementAt(1).InnerText;
-                string title = col.ElementAt(2).SelectSingleNode(".//a").GetAttributeValue("title", "");
+                byte[] data = Encoding.Default.GetBytes(col.ElementAt(2).SelectSingleNode(".//a").GetAttributeValue("title", ""));
+                string title = Encoding.UTF8.GetString(data);
                 string month = col.ElementAt(3).InnerText;
                 Url url = new Url();
                 url.Day = int.Parse(day);
