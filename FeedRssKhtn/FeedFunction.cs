@@ -18,7 +18,7 @@ namespace FeedRssKhtn
             set { doc = value; }
         }
 
-        public IQueryable<Url> GetFeed(string link)
+        public List<Url> GetFeed(string link)
         {
             doc = new HtmlDocument();
             doc.LoadHtml(new WebClient().DownloadString(link));
@@ -41,7 +41,7 @@ namespace FeedRssKhtn
                 result.Add(url);
             }
 
-            return result.AsQueryable();
+            return result;
         }
     }
 }
